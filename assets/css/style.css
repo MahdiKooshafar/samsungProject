@@ -460,6 +460,7 @@ li:hover>.hov-nv1 {
     min-width: 750px;
     align-items: center;
     text-align: center;
+    overflow: hidden;
 }
 
 .footer {
