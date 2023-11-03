@@ -1,3 +1,6 @@
+body{
+    overflow-x: hidden;
+}
 .backall {
     display: flex;
     flex-direction: column;
@@ -74,20 +77,32 @@
 .hov-nv1 {
     display: none;
     position: absolute;
-    /* height: 35vh; */
     top: 100%;
-    /* left: 0; */
-    box-shadow: 0 150vh 0vh 150vh #000000ba;
+    /* box-shadow: 0 150vh 0vh 150vh #000000ba; */
     border-bottom-left-radius: 35px;
     border-bottom-right-radius: 35px;
     background-color: white;
     z-index: +50;
+    padding: 20px 30px !important;
+    animation-name: navlgslide;
+    animation-duration: 0.5s;
+    border-top: 1px solid black;
 }
 
-li:hover>.hov-nv1 {
+.nav1 li:hover>.hov-nv1 {
     display: flex;
 }
-
+.nav1 li:hover>span::after {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    /* left: -50vw; */
+    top: 100%;
+    height: 1px;
+    background-color: #000000ba;
+    z-index: 1;
+    box-shadow: 0 250vh 0vh 250vh #000000ba;
+}
 .nav-img-li {
     min-width: 398px;
     width: 448px;
@@ -163,10 +178,23 @@ li:hover>.hov-nv1 {
 }
 
 .hov-nv1 li {
-    padding: 2%;
     width: 200px;
+    display: flex;
+    align-items: flex-start;
+    font-size: 12px;
+    gap: 7px;
+    text-align: start;
+    animation-name: navlgfixer;
+    animation-duration: 1s;
 }
-
+@keyframes navlgslide{
+    0%{transform: scaleY(0);transform-origin: 0 0;}
+    100%{transform: translateY(1); transform-origin: 0 0;}
+}
+@keyframes navlgfixer{
+    0%{font-size: 5px;opacity: 0;}
+    100%{font-size: 12px; opacity: 1;}
+}
 .ligreedimg {
     width: 550px !important;
     /* height: 60vh!important;   */
